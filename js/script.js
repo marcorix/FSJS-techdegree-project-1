@@ -1,11 +1,4 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
-
-// For assistance:
-// Check the "Project Resources" section of the project instructions
-// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// Created an array of objects
 
 const quotes = [
   {
@@ -38,10 +31,14 @@ const quotes = [
   },
 ];
 
+// Get a random object from the array
+
 function getRandomQuote(array) {
   const num = Math.floor(Math.random() * array.length);
   return array[num];
 }
+
+//Use the returned object to build a string of HTML
 
 function printQuote() {
   const randomQuote = getRandomQuote(quotes);
@@ -67,6 +64,7 @@ function printQuote() {
   document.getElementById("quote-box").innerHTML = HTMLContent;
 }
 
+// Get a random rgb color
 function rgbColor() {
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
@@ -76,6 +74,7 @@ function rgbColor() {
   document.body.style.backgroundColor = rgb;
 }
 
+// Set an interval for changing the background color and display a new quote.
 setInterval(() => {
   printQuote();
   rgbColor();
