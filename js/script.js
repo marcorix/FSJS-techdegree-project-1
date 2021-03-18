@@ -38,6 +38,16 @@ function getRandomQuote(array) {
   return array[num];
 }
 
+// Get a random rgb color
+function rgbColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+
+  let rgb = `rgb(${r}, ${g}, ${b})`;
+  document.body.style.backgroundColor = rgb;
+}
+
 //Use the returned object to build a string of HTML
 
 function printQuote() {
@@ -61,23 +71,13 @@ function printQuote() {
 
   HTMLContent += `</p>`;
 
+  rgbColor();
   document.getElementById("quote-box").innerHTML = HTMLContent;
-}
-
-// Get a random rgb color
-function rgbColor() {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-
-  let rgb = `rgb(${r}, ${g}, ${b})`;
-  document.body.style.backgroundColor = rgb;
 }
 
 // Set an interval for changing the background color and display a new quote.
 setInterval(() => {
   printQuote();
-  rgbColor();
 }, 6000);
 
 document
